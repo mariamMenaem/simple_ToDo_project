@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -21,18 +22,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/todos', 'TodoController@index')->name('todos.index');;
-
-Route::get('/todos/create', 'TodoController@create');
-Route::get('/todos/{todo}/edit', 'TodoController@edit')->name('todos.edit');
-Route::put('/todos/{todo}/update', 'TodoController@update')->name('todos.update');
+Route::resource('/todo' , 'TodoController');
 Route::put('/todos/{todo}/complete', 'TodoController@complete')->name('todos.complete');
 Route::delete('/todos/{todo}/incomplete', 'TodoController@incomplete')->name('todos.incomplete');
-Route::delete('/todos/{todo}/delete', 'TodoController@delete')->name('todos.delete');
-
-
-Route::post('/todos/create', 'TodoController@store');
 
 
 
