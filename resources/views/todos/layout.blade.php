@@ -8,6 +8,7 @@
     <title>Todos</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    @livewireStyles
 </head>
 
 <body>
@@ -16,6 +17,7 @@
     @yield('content')
     </div>
 </div>
+@livewireScripts
 </body>
 
 </html>

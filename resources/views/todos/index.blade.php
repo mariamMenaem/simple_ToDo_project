@@ -27,10 +27,11 @@
   @if($todo->cpmleated)
     <p class="line-through px-5"> {{$todo->title}} </p>
     @else
-    <p class="px-5"> {{$todo->title}} </p>
+    <a href="{{route('todo.show' , $todo->id)}}" class="px-5 cursor-pointer"> {{$todo->title}} </a>
     @endif
   </div>
   <div class="text-orange-400">
+  
       <a class="mx-3 py-1 cursor-pointer rounded-lg" href={{route('todo.edit',['todo' => $todo['id'] ])}}>
         <span class="fas fa-edit"></span>
       </a>

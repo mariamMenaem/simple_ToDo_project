@@ -36,16 +36,26 @@ class TodoController extends Controller
     {
 
         $todo->update([
-            'title' => $request->title
+            'title' => $request->title,
+            'description' => $request->description,
+
+
         ]);
         return redirect(route('todo.index'))->with('message', 'To-Do updated successfully');
+    }
+
+    public function show(Todo $todo)
+    {
+        return view('todos.show', compact('todo'));
     }
 
 
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required|max:255'
+            'title' => 'required|max:255',
+            'description' => 'required|max:255'
+
         ]);
 
         auth()->user()->todos()->create($request->all());
