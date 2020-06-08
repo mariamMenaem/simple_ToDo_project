@@ -13,4 +13,8 @@ class Todo extends Model
    {
       return $this->belongsTo('App\User');
    }
+
+   public function steps(){
+      return $this->hasMany('App\Step');
+   }
 }

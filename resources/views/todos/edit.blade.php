@@ -22,6 +22,8 @@
     @method('put')
     <input class="py-2 px-2 border rounded-lg outline-none" type="text" name='title' value="{{$todo->title}}">
     <textarea name="description" cols="23" rows="6" class="p-2 rounded border block mx-auto my-2 outline-none" placeholder="Description" >{{$todo->description}}</textarea>
+    @livewire('edit-step',['steps' => $todo->steps])
+
     <input class="py-2 px-1 border rounded-lg" type="submit" value="Update">
 </form>
 
